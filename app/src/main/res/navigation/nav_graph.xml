@@ -23,4 +23,14 @@
             android:name="foodTruck"
             app:argType="com.ecs198f.foodtrucks.FoodTruck" />
     </fragment>
+    <fragment
+        android:id="@+id/foodTruckMenuFragment"
+        android:name="com.ecs198f.foodtrucks.FoodTruckMenuFragment"
+        android:label="fragment_food_truck_menu"
+        tools:layout="@layout/fragment_food_truck_menu" />
+    <fragment
+        android:id="@+id/foodTruckReviewsFragment"
+        android:name="com.ecs198f.foodtrucks.FoodTruckReviewsFragment"
+        android:label="fragment_food_truck_reviews"
+        tools:layout="@layout/fragment_food_truck_reviews" />
 </navigation>

@@ -2,7 +2,10 @@ package com.ecs198f.foodtrucks
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.viewpager2.widget.ViewPager2
 import com.ecs198f.foodtrucks.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
@@ -37,5 +40,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         title = "Food Trucks"
+
+        //should work but not sure why it doesnt
+//        val tabLayout=findViewById<TabLayout>(R.id.tab_layout)
+//        val viewPager2 = findViewById<ViewPager2>(R.id.pager)
+//
+//        val adapter = TabStateAdapter(supportFragmentManager, lifecycle)
+//
+//        viewPager2.adapter = adapter
+//
+//        TabLayoutMediator(tabLayout, viewPager2) {tab, position->
+//            when (position) {
+//                0->{
+//                    tab.text="Menu"
+//                }
+//                1->{
+//                    tab.text="Reviews"
+//                }
+//            }
+//        }.attach()
+
     }
 }
