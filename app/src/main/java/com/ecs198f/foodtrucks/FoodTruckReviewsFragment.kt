@@ -14,10 +14,10 @@ import retrofit2.Response
 
 class FoodTruckReviewsFragment : Fragment() {
 
+//    private val foodTruckReviews = ListOf<FoodTruckReviews>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
