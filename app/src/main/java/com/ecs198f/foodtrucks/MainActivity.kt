@@ -41,24 +41,24 @@ class MainActivity : AppCompatActivity() {
 
         title = "Food Trucks"
 
-        //should work but not sure why it doesnt
-        val tabLayout=findViewById<TabLayout>(R.id.tab_layout)
-        val viewPager2 = findViewById<ViewPager2>(R.id.pager)
-
-        val adapter = TabStateAdapter(supportFragmentManager, lifecycle)
-
-        viewPager2.adapter = adapter
-
-        TabLayoutMediator(tabLayout, viewPager2) {tab, position->
-            when (position) {
-                0->{
-                    tab.text="Menu"
-                }
-                1->{
-                    tab.text="Reviews"
-                }
-            }
-        }.attach()
+//        //should work but not sure why it doesnt
+//        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+//        val viewPager2 = findViewById<ViewPager2>(R.id.pager)
+//
+//        val adapter = TabStateAdapter(supportFragmentManager, lifecycle)
+//
+//        viewPager2.adapter = adapter
+//
+//        TabLayoutMediator(tabLayout, viewPager2) {tab, position->
+//            when (position) {
+//                0->{
+//                    tab.text="Menu"
+//                }
+//                1->{
+//                    tab.text="Reviews"
+//                }
+//            }
+//        }.attach()
 
     }
 }

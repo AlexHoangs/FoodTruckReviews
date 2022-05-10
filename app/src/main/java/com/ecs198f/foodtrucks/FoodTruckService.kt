@@ -11,6 +11,6 @@ interface FoodTruckService {
     @GET("food-trucks/{id}/items")
     fun listFoodItems(@Path("id") truckId: String): Call<List<FoodItem>>
 
-//    @GET("food-trucks/{truckId}/reviews")
-//    fun listFoodTruckReviews(@Path("id") truckId: String): Call<List<FoodTruckReviews>>
+    @GET("food-trucks/{truckId}/reviews")
+    fun listFoodTruckReviews(@Path("id") truckId: String): Call<List<FoodTruckReviews>>
 }
