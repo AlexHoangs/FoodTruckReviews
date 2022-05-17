@@ -1,4 +1,4 @@
-package com.ecs198f.foodtrucks
+package com.alexanderhoang.foodtruck
 
 import org.junit.Test
 

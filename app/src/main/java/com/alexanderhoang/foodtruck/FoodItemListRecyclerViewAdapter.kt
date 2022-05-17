@@ -1,9 +1,9 @@
-package com.ecs198f.foodtrucks
+package com.alexanderhoang.foodtruck
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ecs198f.foodtrucks.databinding.FoodItemBinding
+import com.alexanderhoang.foodtruck.databinding.FoodItemBinding
 
 class FoodItemListRecyclerViewAdapter(private var items: List<FoodItem>):
     RecyclerView.Adapter<FoodItemListRecyclerViewAdapter.ViewHolder>() {

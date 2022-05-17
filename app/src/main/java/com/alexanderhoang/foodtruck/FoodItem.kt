@@ -1,6 +1,11 @@
-package com.ecs198f.foodtrucks
+package com.alexanderhoang.foodtruck
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class FoodItem(
+    @PrimaryKey
     val id: String,
     val truckId: String,
     val name: String,

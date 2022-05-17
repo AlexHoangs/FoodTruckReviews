@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/foodTruckListFragment"
-        android:name="com.ecs198f.foodtrucks.FoodTruckListFragment"
+        android:name="com.alexanderhoang.foodtruck.FoodTruckListFragment"
         android:label="fragment_food_truck_list"
         tools:layout="@layout/fragment_food_truck_list" >
         <action
@@ -15,26 +15,29 @@
             app:destination="@id/foodTruckDetailFragment" />
     </fragment>
     <fragment
+        android:id="@+id/foodTruckMenuFragment"
+        android:name="com.alexanderhoang.foodtruck.FoodTruckMenuFragment"
+        android:label="fragment_food_truck_menu"
+        tools:layout="@layout/fragment_food_truck_menu" >
+        <argument
+            android:name="foodTruck"
+            app:argType="com.alexanderhoang.foodtruck.FoodTruck" />
+    </fragment>
+    <fragment
         android:id="@+id/foodTruckDetailFragment"
-        android:name="com.ecs198f.foodtrucks.FoodTruckDetailFragment"
+        android:name="com.alexanderhoang.foodtruck.FoodTruckDetailFragment"
         android:label="fragment_food_truck_detail"
         tools:layout="@layout/fragment_food_truck_detail" >
         <argument
             android:name="foodTruck"
-            app:argType="com.ecs198f.foodtrucks.FoodTruck" />
+            app:argType="com.alexanderhoang.foodtruck.FoodTruck" />
     </fragment>
     <fragment
-        android:id="@+id/foodTruckMenuFragment"
-        android:name="com.ecs198f.foodtrucks.FoodTruckMenuFragment"
-        android:label="fragment_food_truck_menu"
-        tools:layout="@layout/fragment_food_truck_menu" />
-    <fragment
         android:id="@+id/foodTruckReviewsFragment"
-        android:name="com.ecs198f.foodtrucks.FoodTruckReviewsFragment"
-        android:label="fragment_food_truck_reviews"
-        tools:layout="@layout/fragment_food_truck_reviews" >
+        android:name="com.alexanderhoang.foodtruck.FoodTruckReviewsFragment"
+        android:label="FoodTruckReviewsFragment" >
         <argument
-            android:name="foodTruckReviews"
-            app:argType="com.ecs198f.foodtrucks.FoodTruckReviews" />
+            android:name="foodTruck"
+            app:argType="com.alexanderhoang.foodtruck.FoodTruck" />
     </fragment>
 </navigation>

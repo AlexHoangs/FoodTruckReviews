@@ -1,4 +1,4 @@
-package com.ecs198f.foodtrucks
+package com.alexanderhoang.foodtruck
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -10,5 +10,5 @@ data class FoodTruckReviews (
     val authorName: String,
     val authorAvatarUrl: String,
     val content: String,
-    val imageUrls: String
+    val imageUrls: List<String>
 ): Parcelable {}

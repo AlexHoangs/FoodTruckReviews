@@ -1,4 +1,4 @@
-package com.ecs198f.foodtrucks
+package com.alexanderhoang.foodtruck
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,28 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.ecs198f.foodtrucks.databinding.FragmentFoodTruckDetailBinding
+import com.alexanderhoang.foodtruck.databinding.FragmentFoodTruckMenuBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FoodTruckDetailFragment : Fragment() {
-    private val args: FoodTruckDetailFragmentArgs by navArgs()
+class FoodTruckMenuFragment : Fragment() {
+    private val args: FoodTruckMenuFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentFoodTruckDetailBinding.inflate(inflater, container, false)
+        val binding = FragmentFoodTruckMenuBinding.inflate(inflater, container, false)
         val recyclerViewAdapter = FoodItemListRecyclerViewAdapter(listOf())
 
         args.foodTruck.let {
             binding.apply {
-                Glide.with(root).load(it.imageUrl).into(foodTruckDetailImage)
-                foodTruckDetailPriceLevel.text = "$".repeat(it.priceLevel)
-                foodTruckDetailLocation.text = it.location
-                foodTruckDetailTime.text = it.formattedTimeInterval
                 foodItemListRecyclerView.apply {
                     adapter = recyclerViewAdapter
                     layoutManager = LinearLayoutManager(context)
@@ -38,16 +33,17 @@ class FoodTruckDetailFragment : Fragment() {
             (requireActivity() as MainActivity).apply {
                 title = it.name
 
-                foodTruckService.listFoodItems(it.id).enqueue(object : Callback<List<FoodItem>> {
+                MainActivity.foodTruckService.listFoodItems(it.id).enqueue(object : Callback<List<FoodItem>> {
                     override fun onResponse(
                         call: Call<List<FoodItem>>,
-                        response: Response<List<FoodItem>>
-                    ) {
-                        recyclerViewAdapter.updateItems(response.body()!!)
+                        response: Response<List<FoodItem>>) {
+                        recyclerViewAdapter.updateItems(response.body()!!);
+                        MainActivity.db?.foodItemDao()?.insertFoodItems(response.body()!!);
                     }
 
                     override fun onFailure(call: Call<List<FoodItem>>, t: Throwable) {
-                        throw t
+                        recyclerViewAdapter.updateItems(
+                            MainActivity.db?.foodItemDao()?.getAllTruckItems(args.foodTruck.id)!!);
                     }
                 })
             }
